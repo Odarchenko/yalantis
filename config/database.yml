@@ -1,0 +1,34 @@
+default: &default
+  adapter: postgresql
+  pool: 10
+  timeout: 5000
+  username: <%= ENV['DATABASE_USER_NAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: db
+  port: 5432
+
+development:
+  <<: *default
+  database: myapp_development
+
+
+test:
+  <<: *default
+  database: myapp_test
+
+# default: &default
+#   adapter: postgresql
+#   encoding: unicode
+#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+# development:
+#   <<: *default
+#   database: yalantis_test_development
+# test:
+#   <<: *default
+#   database: yalantis_test_test
+# production:
+#   <<: *default
+#   database: yalantis_test_production
+#   username: root
+#   password: 123456

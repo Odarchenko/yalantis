@@ -1,0 +1,28 @@
+<p><strong>Request number</strong>: <%= request_number %></p>
+<p><strong>Sequence number</strong>: <%= sequence_number %></p>
+<p><strong>Request type</strong>: <%= request_type %></p>
+<p><strong>Response due date time</strong>: <%= response_time %></p>
+<p><strong>Primary sa code</strong>: <%= primary_sa_code %></p>
+<p><strong>Additional sa codes</strong>: <%= additional_sa_codes.join(', ')  %></p>
+<p><strong>Company name</strong>: <%= excavator_company_name  %></p>
+<p><strong>Crew on site</strong>: <%= excavator_crew_on_site  %></p>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+
+<div id="map" data-polygon= "<%= polygon.to_json %>"></div>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvkI36T-T6xJe8Qif7QkbQ1xvTl8Ha_9o&callback=initMap">
+</script>
+
+<%= link_to 'Back', tickets_path %>

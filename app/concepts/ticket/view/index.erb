@@ -1,0 +1,15 @@
+<h1>Tickets</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Request number</th>
+      <th>Sequence number</th>
+      <th>Request type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= cell(Ticket::Cell::Item, collection: model)%>
+  </tbody>
+</table>
+
